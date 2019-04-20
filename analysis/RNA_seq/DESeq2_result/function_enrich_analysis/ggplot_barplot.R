@@ -11,7 +11,9 @@ library(ggplot2)
 p<-ggplot(data=go_bp_fil, aes(x=Term, y=minusLog10FDR)) +
   geom_bar(stat="identity") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
 
-pdf("test_barplot.pdf")
+ggsave("test_ggsavebarplot.pdf", p)
+pdf("test_ggbarplot.pdf", height=5, width = 5.5)
 print(p)
 dev.off()
